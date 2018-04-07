@@ -1,0 +1,28 @@
+{
+    "serflixApp": {
+        "preferences" : {
+            "home": {
+                "title": "Preferences",
+                "createLabel": "Crear nuevo Preferences",
+                "createOrEditLabel": "Crear o editar Preferences",
+                "search": "Search for Preferences"
+            },
+            "created": "Un nuevo Preferences ha sido creado con el identificador {{ param }}",
+            "updated": "Un Preferences ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Preferences ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Preferences {{ id }}?"
+            },
+            "detail": {
+                "title": "Preferences"
+            },
+            "type": "Type",
+            "name": "Name",
+            "value": "Value",
+            "user": "User",
+            "movieRecomendation": "Movie Recomendation",
+            "serieRecomendation": "Serie Recomendation",
+            "request": "Request"
+        }
+    }
+}

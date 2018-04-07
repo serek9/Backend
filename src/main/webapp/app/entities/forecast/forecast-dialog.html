@@ -1,0 +1,48 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myForecastLabel" data-translate="serflixApp.forecast.home.createOrEditLabel">Create or edit a Forecast</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.forecast.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.forecast.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="serflixApp.forecast.temperature" for="field_temperature">Temperature</label>
+            <input type="number" class="form-control" name="temperature" id="field_temperature"
+                    ng-model="vm.forecast.temperature"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="serflixApp.forecast.weather" for="field_weather">Weather</label>
+            <select class="form-control" name="weather" ng-model="vm.forecast.weather" id="field_weather">
+                <option value="CLEAR" data-translate="serflixApp.Weather.CLEAR">CLEAR</option>
+                <option value="RAIN" data-translate="serflixApp.Weather.RAIN">RAIN</option>
+                <option value="SNOW" data-translate="serflixApp.Weather.SNOW">SNOW</option>
+                <option value="CLOUDY" data-translate="serflixApp.Weather.CLOUDY">CLOUDY</option>
+                <option value="PARTLY_CLOUDY" data-translate="serflixApp.Weather.PARTLY_CLOUDY">PARTLY_CLOUDY</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="serflixApp.forecast.request" for="field_request">Request</label>
+            <select class="form-control" id="field_request" name="request" ng-model="vm.forecast.request" ng-options="request as request.id for request in vm.requests track by request.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

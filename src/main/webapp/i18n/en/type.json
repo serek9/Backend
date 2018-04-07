@@ -1,0 +1,9 @@
+{
+    "serflixApp": {
+        "Type" : {
+            "null": "",
+            "MOVIE": "MOVIE",
+            "SERIES": "SERIES"
+        }
+    }
+}

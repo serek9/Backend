@@ -1,0 +1,64 @@
+<div>
+    <h2 data-translate="serflixApp.movieRecomendation.home.title">Movie Recomendations</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="movie-recomendation.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="serflixApp.movieRecomendation.home.createLabel">
+                        Create new Movie Recomendation
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="serflixApp.movieRecomendation.recomendationResult">Recomendation Result</span></th>
+                    <th><span data-translate="serflixApp.movieRecomendation.movieDTO">Movie DTO</span></th>
+                    <th><span data-translate="serflixApp.movieRecomendation.request">Request</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="movieRecomendation in vm.movieRecomendations track by movieRecomendation.id">
+                    <td><a ui-sref="movie-recomendation-detail({id:movieRecomendation.id})">{{movieRecomendation.id}}</a></td>
+                    <td data-translate="{{'serflixApp.RecomendationResult.' + movieRecomendation.recomendationResult}}">{{movieRecomendation.recomendationResult}}</td>
+                    <td>
+                        <a ui-sref="movie-detail({id:movieRecomendation.movieDTO.id})">{{movieRecomendation.movieDTO.name}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="request-detail({id:movieRecomendation.request.id})">{{movieRecomendation.request.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="movie-recomendation-detail({id:movieRecomendation.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="movie-recomendation.edit({id:movieRecomendation.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="movie-recomendation.delete({id:movieRecomendation.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

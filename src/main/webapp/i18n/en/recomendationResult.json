@@ -1,0 +1,12 @@
+{
+    "serflixApp": {
+        "RecomendationResult" : {
+            "null": "",
+            "PRESELECTED": "PRESELECTED",
+            "ACCEPTED": "ACCEPTED",
+            "REJECTED": "REJECTED",
+            "WATCHED_LIKED": "WATCHED_LIKED",
+            "WATCHED_DISLIKED": "WATCHED_DISLIKED"
+        }
+    }
+}

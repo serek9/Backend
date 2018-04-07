@@ -1,0 +1,26 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "movieRecomendation",
+            "otherEntityName": "movieRecomendation",
+            "otherEntityRelationshipName": "movieDTO"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idExternalApi",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20170216194226",
+    "entityTableName": "movie",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

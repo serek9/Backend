@@ -1,0 +1,12 @@
+{
+    "serflixApp": {
+        "Company" : {
+            "null": "",
+            "ALONE": "ALONE",
+            "FRIENDS": "FRIENDS",
+            "PARTNER": "PARTNER",
+            "FAMILY": "FAMILY",
+            "ANOTHER_USER": "ANOTHER_USER"
+        }
+    }
+}

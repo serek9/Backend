@@ -1,0 +1,78 @@
+<div>
+    <h2 data-translate="serflixApp.request.home.title">Requests</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="request.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="serflixApp.request.home.createLabel">
+                        Create new Request
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="serflixApp.request.type">Type</span></th>
+                    <th><span data-translate="serflixApp.request.name">Name</span></th>
+                    <th><span data-translate="serflixApp.request.viewDate">View Date</span></th>
+                    <th><span data-translate="serflixApp.request.creationDate">Creation Date</span></th>
+                    <th><span data-translate="serflixApp.request.company">Company</span></th>
+                    <th><span data-translate="serflixApp.request.userRequester">User Requester</span></th>
+                    <th><span data-translate="serflixApp.request.location">Location</span></th>
+                    <th><span data-translate="serflixApp.request.userGuest">User Guest</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="request in vm.requests track by request.id">
+                    <td><a ui-sref="request-detail({id:request.id})">{{request.id}}</a></td>
+                    <td data-translate="{{'serflixApp.Type.' + request.type}}">{{request.type}}</td>
+                    <td>{{request.name}}</td>
+                    <td>{{request.viewDate | date:'medium'}}</td>
+                    <td>{{request.creationDate | date:'medium'}}</td>
+                    <td data-translate="{{'serflixApp.Company.' + request.company}}">{{request.company}}</td>
+                    <td>
+                        {{request.userRequester.login}}
+                    </td>
+                    <td>
+                        <a ui-sref="location-detail({id:request.location.id})">{{request.location.id}}</a>
+                    </td>
+                    <td>
+                        <span ng-repeat="userGuest in request.userGuests">
+                            {{userGuest.login}}{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="request-detail({id:request.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="request.edit({id:request.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="request.delete({id:request.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

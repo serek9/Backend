@@ -1,0 +1,24 @@
+{
+    "serflixApp": {
+        "movie" : {
+            "home": {
+                "title": "Movies",
+                "createLabel": "Crear nuevo Movie",
+                "createOrEditLabel": "Crear o editar Movie",
+                "search": "Search for Movie"
+            },
+            "created": "Un nuevo Movie ha sido creado con el identificador {{ param }}",
+            "updated": "Un Movie ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Movie ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Movie {{ id }}?"
+            },
+            "detail": {
+                "title": "Movie"
+            },
+            "name": "Name",
+            "idExternalApi": "Id External Api",
+            "movieRecomendation": "Movie Recomendation"
+        }
+    }
+}

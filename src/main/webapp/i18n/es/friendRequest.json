@@ -1,0 +1,26 @@
+{
+    "serflixApp": {
+        "friendRequest" : {
+            "home": {
+                "title": "Friend Requests",
+                "createLabel": "Crear nuevo Friend Request",
+                "createOrEditLabel": "Crear o editar Friend Request",
+                "search": "Search for Friend Request"
+            },
+            "created": "Un nuevo Friend Request ha sido creado con el identificador {{ param }}",
+            "updated": "Un Friend Request ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Friend Request ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Friend Request {{ id }}?"
+            },
+            "detail": {
+                "title": "Friend Request"
+            },
+            "sentOn": "Sent On",
+            "resolvedOn": "Resolved On",
+            "accepted": "Accepted",
+            "sender": "Sender",
+            "receiver": "Receiver"
+        }
+    }
+}

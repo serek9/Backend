@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Request.
+    -->
+    <changeSet id="20170216194225-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="user_requester_id"
+                                 baseTableName="request"
+                                 constraintName="fk_request_user_requester_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="location_id"
+                                 baseTableName="request"
+                                 constraintName="fk_request_location_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="location"/>
+
+        <addForeignKeyConstraint baseColumnNames="requests_id"
+                                 baseTableName="request_user_guest"
+                                 constraintName="fk_request_user_guest_requests_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="request"/>
+        <addForeignKeyConstraint baseColumnNames="user_guests_id"
+                                 baseTableName="request_user_guest"
+                                 constraintName="fk_request_user_guest_user_guests_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+        
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,24 @@
+{
+    "serflixApp": {
+        "serie" : {
+            "home": {
+                "title": "Series",
+                "createLabel": "Crear nuevo Serie",
+                "createOrEditLabel": "Crear o editar Serie",
+                "search": "Search for Serie"
+            },
+            "created": "Un nuevo Serie ha sido creado con el identificador {{ param }}",
+            "updated": "Un Serie ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Serie ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Serie {{ id }}?"
+            },
+            "detail": {
+                "title": "Serie"
+            },
+            "name": "Name",
+            "idExternalApi": "Id External Api",
+            "serieRecomendation": "Serie Recomendation"
+        }
+    }
+}

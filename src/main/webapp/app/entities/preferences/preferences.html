@@ -1,0 +1,82 @@
+<div>
+    <h2 data-translate="serflixApp.preferences.home.title">Preferences</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="preferences.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="serflixApp.preferences.home.createLabel">
+                        Create new Preferences
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="serflixApp.preferences.type">Type</span></th>
+                    <th><span data-translate="serflixApp.preferences.name">Name</span></th>
+                    <th><span data-translate="serflixApp.preferences.value">Value</span></th>
+                    <th><span data-translate="serflixApp.preferences.user">User</span></th>
+                    <th><span data-translate="serflixApp.preferences.movieRecomendation">Movie Recomendation</span></th>
+                    <th><span data-translate="serflixApp.preferences.serieRecomendation">Serie Recomendation</span></th>
+                    <th><span data-translate="serflixApp.preferences.request">Request</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="preferences in vm.preferences track by preferences.id">
+                    <td><a ui-sref="preferences-detail({id:preferences.id})">{{preferences.id}}</a></td>
+                    <td>{{preferences.type}}</td>
+                    <td>{{preferences.name}}</td>
+                    <td>{{preferences.value}}</td>
+                    <td>
+                        {{preferences.user.login}}
+                    </td>
+                    <td>
+                        <span ng-repeat="movieRecomendation in preferences.movieRecomendations">
+                            <a class="form-control-static" ui-sref="movie-recomendation-detail({id: movieRecomendation.id})">{{movieRecomendation.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="serieRecomendation in preferences.serieRecomendations">
+                            <a class="form-control-static" ui-sref="serie-recomendation-detail({id: serieRecomendation.id})">{{serieRecomendation.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="request in preferences.requests">
+                            <a class="form-control-static" ui-sref="request-detail({id: request.id})">{{request.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="preferences-detail({id:preferences.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="preferences.edit({id:preferences.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="preferences.delete({id:preferences.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

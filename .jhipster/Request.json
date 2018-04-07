@@ -1,0 +1,79 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "userRequester",
+            "otherEntityName": "user",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "location",
+            "otherEntityName": "location",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "userGuest",
+            "otherEntityName": "user",
+            "otherEntityField": "login",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "forecast",
+            "otherEntityName": "forecast",
+            "otherEntityRelationshipName": "request"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "movieRecomendation",
+            "otherEntityName": "movieRecomendation",
+            "otherEntityRelationshipName": "request"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "serieRecomendation",
+            "otherEntityName": "serieRecomendation",
+            "otherEntityRelationshipName": "request"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "preferences",
+            "otherEntityName": "preferences",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "request"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "Type",
+            "fieldValues": "MOVIE,SERIES"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "viewDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "creationDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "company",
+            "fieldType": "Company",
+            "fieldValues": "ALONE,FRIENDS,PARTNER,FAMILY,ANOTHER_USER"
+        }
+    ],
+    "changelogDate": "20170216194225",
+    "entityTableName": "request",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

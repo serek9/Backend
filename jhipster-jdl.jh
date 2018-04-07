@@ -1,0 +1,85 @@
+enum RecomendationResult {
+  	PRESELECTED, ACCEPTED, REJECTED, WATCHED_LIKED, WATCHED_DISLIKED
+}
+
+enum Type{
+  	MOVIE, SERIES
+}
+
+enum Company {
+    ALONE, FRIENDS, PARTNER, FAMILY, ANOTHER_USER
+}
+
+enum Weather{
+	CLEAR, RAIN, SNOW, CLOUDY, PARTLY_CLOUDY
+}
+
+entity Forecast {
+    temperature Double,
+    weather Weather
+}
+
+entity Location{
+    city String,
+    state String,
+    country String
+}
+
+entity Preferences{
+	type String,
+     name String,
+     value Integer
+}
+
+entity FriendRequest{
+	sentOn ZonedDateTime,
+    resolvedOn ZonedDateTime,
+    accepted Boolean
+}
+
+
+entity Request{
+    type Type,
+    name String,
+	viewDate ZonedDateTime,
+    creationDate ZonedDateTime,
+    company Company
+}
+
+entity Movie{
+	name String,
+    idExternalApi Long
+}
+entity Serie{
+	name String,
+    idExternalApi Long
+}
+entity MovieRecomendation{
+	recomendationResult RecomendationResult
+}
+
+entity SerieRecomendation{
+	recomendationResult RecomendationResult
+}
+relationship ManyToMany{
+	Request{userGuest(login)} to User,
+    Preferences{movieRecomendation} to MovieRecomendation{preferences},
+    Preferences{serieRecomendation} to SerieRecomendation{preferences},
+    Preferences{request} to Request{preferences}
+}
+relationship ManyToOne{
+	Preferences{user(login)} to User,
+    Request{userRequester(login)} to User,
+
+    Forecast{request} to Request{forecast},
+    Request{location} to Location{request},
+
+    MovieRecomendation{movieDTO(name)} to Movie{movieRecomendation},
+    MovieRecomendation{request} to Request{movieRecomendation},
+
+    SerieRecomendation{serie(name)} to Serie{serieRecomendation},
+    SerieRecomendation{request} to Request{serieRecomendation},
+
+    FriendRequest{sender(login)} to User,
+    FriendRequest{receiver(login)} to User
+}

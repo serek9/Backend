@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity SerieRecomendation.
+    -->
+    <changeSet id="20170216194229-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="serie_id"
+                                 baseTableName="serie_recomendation"
+                                 constraintName="fk_serie_recomendation_serie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="serie"/>
+
+        <addForeignKeyConstraint baseColumnNames="request_id"
+                                 baseTableName="serie_recomendation"
+                                 constraintName="fk_serie_recomendation_request_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="request"/>
+
+    </changeSet>
+</databaseChangeLog>

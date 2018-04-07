@@ -1,0 +1,25 @@
+{
+    "serflixApp": {
+        "movieRecomendation" : {
+            "home": {
+                "title": "Movie Recomendations",
+                "createLabel": "Crear nuevo Movie Recomendation",
+                "createOrEditLabel": "Crear o editar Movie Recomendation",
+                "search": "Search for Movie Recomendation"
+            },
+            "created": "Un nuevo Movie Recomendation ha sido creado con el identificador {{ param }}",
+            "updated": "Un Movie Recomendation ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Movie Recomendation ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Movie Recomendation {{ id }}?"
+            },
+            "detail": {
+                "title": "Movie Recomendation"
+            },
+            "recomendationResult": "Recomendation Result",
+            "movieDTO": "Movie DTO",
+            "request": "Request",
+            "preferences": "Preferences"
+        }
+    }
+}

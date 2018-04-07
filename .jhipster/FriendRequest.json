@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "sender",
+            "otherEntityName": "user",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "receiver",
+            "otherEntityName": "user",
+            "otherEntityField": "login"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "sentOn",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "resolvedOn",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "accepted",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20170216194224",
+    "entityTableName": "friend_request",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

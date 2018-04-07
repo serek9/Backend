@@ -1,0 +1,12 @@
+{
+    "serflixApp": {
+        "Weather" : {
+            "null": "",
+            "CLEAR": "CLEAR",
+            "RAIN": "RAIN",
+            "SNOW": "SNOW",
+            "CLOUDY": "CLOUDY",
+            "PARTLY_CLOUDY": "PARTLY_CLOUDY"
+        }
+    }
+}

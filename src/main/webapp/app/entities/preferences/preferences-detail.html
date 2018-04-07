@@ -1,0 +1,53 @@
+
+<div>
+    <h2><span data-translate="serflixApp.preferences.detail.title">Preferences</span> {{vm.preferences.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="serflixApp.preferences.type">Type</span></dt>
+        <dd>
+            <span>{{vm.preferences.type}}</span>
+        </dd>
+        <dt><span data-translate="serflixApp.preferences.name">Name</span></dt>
+        <dd>
+            <span>{{vm.preferences.name}}</span>
+        </dd>
+        <dt><span data-translate="serflixApp.preferences.value">Value</span></dt>
+        <dd>
+            <span>{{vm.preferences.value}}</span>
+        </dd>
+        <dt><span data-translate="serflixApp.preferences.user">User</span></dt>
+        <dd>
+            {{vm.preferences.user.login}}
+        </dd>
+        <dt><span data-translate="serflixApp.preferences.movieRecomendation">Movie Recomendation</span></dt>
+        <dd>
+            <span ng-repeat="movieRecomendation in vm.preferences.movieRecomendations">
+                <a ui-sref="movie-recomendation-detail({id: movieRecomendation.id})">{{movieRecomendation.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="serflixApp.preferences.serieRecomendation">Serie Recomendation</span></dt>
+        <dd>
+            <span ng-repeat="serieRecomendation in vm.preferences.serieRecomendations">
+                <a ui-sref="serie-recomendation-detail({id: serieRecomendation.id})">{{serieRecomendation.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="serflixApp.preferences.request">Request</span></dt>
+        <dd>
+            <span ng-repeat="request in vm.preferences.requests">
+                <a ui-sref="request-detail({id: request.id})">{{request.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="preferences-detail.edit({id:vm.preferences.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "serie",
+            "otherEntityName": "serie",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "request",
+            "otherEntityName": "request",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "preferences",
+            "otherEntityName": "preferences",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "serieRecomendation"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "recomendationResult",
+            "fieldType": "RecomendationResult",
+            "fieldValues": "PRESELECTED,ACCEPTED,REJECTED,WATCHED_LIKED,WATCHED_DISLIKED"
+        }
+    ],
+    "changelogDate": "20170216194229",
+    "entityTableName": "serie_recomendation",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

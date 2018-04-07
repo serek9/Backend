@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "movieDTO",
+            "otherEntityName": "movie",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "request",
+            "otherEntityName": "request",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "preferences",
+            "otherEntityName": "preferences",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "movieRecomendation"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "recomendationResult",
+            "fieldType": "RecomendationResult",
+            "fieldValues": "PRESELECTED,ACCEPTED,REJECTED,WATCHED_LIKED,WATCHED_DISLIKED"
+        }
+    ],
+    "changelogDate": "20170216194228",
+    "entityTableName": "movie_recomendation",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

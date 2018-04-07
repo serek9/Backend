@@ -1,0 +1,24 @@
+{
+    "serflixApp": {
+        "forecast" : {
+            "home": {
+                "title": "Forecasts",
+                "createLabel": "Crear nuevo Forecast",
+                "createOrEditLabel": "Crear o editar Forecast",
+                "search": "Search for Forecast"
+            },
+            "created": "Un nuevo Forecast ha sido creado con el identificador {{ param }}",
+            "updated": "Un Forecast ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Forecast ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Forecast {{ id }}?"
+            },
+            "detail": {
+                "title": "Forecast"
+            },
+            "temperature": "Temperature",
+            "weather": "Weather",
+            "request": "Request"
+        }
+    }
+}

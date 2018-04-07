@@ -1,0 +1,25 @@
+{
+    "serflixApp": {
+        "serieRecomendation" : {
+            "home": {
+                "title": "Serie Recomendations",
+                "createLabel": "Create a new Serie Recomendation",
+                "createOrEditLabel": "Create or edit a Serie Recomendation",
+                "search": "Search for Serie Recomendation"
+            },
+            "created": "A new Serie Recomendation is created with identifier {{ param }}",
+            "updated": "A Serie Recomendation is updated with identifier {{ param }}",
+            "deleted": "A Serie Recomendation is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Serie Recomendation {{ id }}?"
+            },
+            "detail": {
+                "title": "Serie Recomendation"
+            },
+            "recomendationResult": "Recomendation Result",
+            "serie": "Serie",
+            "request": "Request",
+            "preferences": "Preferences"
+        }
+    }
+}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Preferences.
+    -->
+    <changeSet id="20170216194223-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="preferences"
+                                 constraintName="fk_preferences_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="preferences_id"
+                                 baseTableName="preferences_movie_recomendation"
+                                 constraintName="fk_preferences_movie_recomendation_preferences_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="preferences"/>
+        <addForeignKeyConstraint baseColumnNames="movie_recomendations_id"
+                                 baseTableName="preferences_movie_recomendation"
+                                 constraintName="fk_preferences_movie_recomendation_movie_recomendations_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="movie_recomendation"/>
+        
+        <addForeignKeyConstraint baseColumnNames="preferences_id"
+                                 baseTableName="preferences_serie_recomendation"
+                                 constraintName="fk_preferences_serie_recomendation_preferences_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="preferences"/>
+        <addForeignKeyConstraint baseColumnNames="serie_recomendations_id"
+                                 baseTableName="preferences_serie_recomendation"
+                                 constraintName="fk_preferences_serie_recomendation_serie_recomendations_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="serie_recomendation"/>
+        
+        <addForeignKeyConstraint baseColumnNames="preferences_id"
+                                 baseTableName="preferences_request"
+                                 constraintName="fk_preferences_request_preferences_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="preferences"/>
+        <addForeignKeyConstraint baseColumnNames="requests_id"
+                                 baseTableName="preferences_request"
+                                 constraintName="fk_preferences_request_requests_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="request"/>
+        
+    </changeSet>
+</databaseChangeLog>

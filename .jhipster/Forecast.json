@@ -1,0 +1,27 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "request",
+            "otherEntityName": "request",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "temperature",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "weather",
+            "fieldType": "Weather",
+            "fieldValues": "CLEAR,RAIN,SNOW,CLOUDY,PARTLY_CLOUDY"
+        }
+    ],
+    "changelogDate": "20170216194221",
+    "entityTableName": "forecast",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

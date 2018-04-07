@@ -1,0 +1,33 @@
+{
+    "serflixApp": {
+        "request" : {
+            "home": {
+                "title": "Requests",
+                "createLabel": "Crear nuevo Request",
+                "createOrEditLabel": "Crear o editar Request",
+                "search": "Search for Request"
+            },
+            "created": "Un nuevo Request ha sido creado con el identificador {{ param }}",
+            "updated": "Un Request ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Request ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Request {{ id }}?"
+            },
+            "detail": {
+                "title": "Request"
+            },
+            "type": "Type",
+            "name": "Name",
+            "viewDate": "View Date",
+            "creationDate": "Creation Date",
+            "company": "Company",
+            "userRequester": "User Requester",
+            "location": "Location",
+            "userGuest": "User Guest",
+            "forecast": "Forecast",
+            "movieRecomendation": "Movie Recomendation",
+            "serieRecomendation": "Serie Recomendation",
+            "preferences": "Preferences"
+        }
+    }
+}
